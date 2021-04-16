@@ -1,3 +1,9 @@
+import firebase from 'firebase/app';
+
 export interface CAPFirebaseAuthPlugin {
-  echo(options: { value: string }): Promise<{ value: string }>;
+  signIn(options: {
+    providerId: 'google.com' | 'microsoft.com' | 'apple.com';
+  }): Promise<firebase.User | null>;
+
+  signOut(): Promise<void>;
 }
