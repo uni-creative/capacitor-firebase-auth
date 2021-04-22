@@ -29,7 +29,7 @@ signIn(options: { providerId: 'google.com' | 'microsoft.com' | 'apple.com'; }) =
 
 | Param         | Type                                                                         |
 | ------------- | ---------------------------------------------------------------------------- |
-| **`options`** | <code>{ providerId: "google.com" \| "microsoft.com" \| "apple.com"; }</code> |
+| **`options`** | <code>{ providerId: 'google.com' \| 'microsoft.com' \| 'apple.com'; }</code> |
 
 **Returns:** <code>Promise&lt;User | null&gt;</code>
 
