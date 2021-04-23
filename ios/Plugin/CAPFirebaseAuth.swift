@@ -1,5 +1,6 @@
 import Foundation
 
+
 @objc public class CAPFirebaseAuth: NSObject {
     
     @objc public func signIn(providerId: String) -> String {

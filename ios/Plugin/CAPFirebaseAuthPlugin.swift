@@ -1,7 +1,6 @@
 import Foundation
 import Capacitor
-
-import Firebase
+import FirebaseCore
 
 /**
  * Please read the Capacitor iOS Plugin Development Guide
@@ -12,9 +11,6 @@ public class CAPFirebaseAuthPlugin: CAPPlugin {
     private let implementation = CAPFirebaseAuth()
     
     public override func load(){
-        
-        print("LOADDDDDD")
-        
         if (FirebaseApp.app() == nil) {
            FirebaseApp.configure()
        }
