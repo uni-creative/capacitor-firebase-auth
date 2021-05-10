@@ -35,14 +35,18 @@ export class CAPFirebaseAuthWeb
   private async signInWithOAuth(
     providerId: 'google.com' | 'microsoft.com' | 'apple.com',
   ): Promise<firebase.User | null> {
-    const provider = new firebase.auth.OAuthProvider(providerId);
-    provider.setCustomParameters({
-      prompt: 'select_account',
-    });
-    provider.addScope('profile');
-    provider.addScope('email');
+    if (['google.com', 'microsoft.com'].includes(providerId)) {
+      const provider = new firebase.auth.OAuthProvider(providerId);
+      provider.setCustomParameters({
+        prompt: 'select_account',
+      });
+      provider.addScope('profile');
+      provider.addScope('email');
 
-    const res = await firebase.auth().signInWithPopup(provider);
-    return res.user;
+      const res = await firebase.auth().signInWithPopup(provider);
+      return res.user;
+    } else {
+      return null;
+    }
   }
 }
